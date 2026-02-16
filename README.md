@@ -1,14 +1,17 @@
-# Unity_Roguelike
-Testa projekts, kas demonstre Unity UI elementu lietojumu par tēmu "Roguelike"
+# Unity_bean
+Testa projekts, kas demonstrē Unity UI elementu lietojumu par tēmu "MR. Bīns"
 
-**Darbību saraksts**
-- [ ] UI button lietojums
-- [ ] UI input field lietojums
-- [ ] UI Text lietojums
-- [ ] UI Image lietojums
-- [ ] UI radio button lietojums
-- [ ] UI Slider lietojums
-- [ ] Drag and drop funkcionalītāte
-- [ ] Audio source lietojums
-- [ ] Riggid body un collider lietojums
-- [ ] Projekta sagatavošana Windows OS
+**Darāmo darbu saraksts:**
+- [x] UI Button lietojums
+- [x] UI Input field lietojums
+- [x] UI Text lietojums
+- [x] UI Image lietojums
+- [x] UI radio button lietojums
+- [x] UI slider lietojums
+- [x] Drag and drop funkcionalitāte
+- [x] Audio source lietojums
+- [x] Riggid body un collider lietojums
+- [x] Projekta sagatavošana Windows OS
+- [ ] Izveidot galvenās izvēlnes ainu (paši)
+- [ ] Izveidot TV ainu (paši)
+- [ ] Integrēt virtuļu ķeršanas spēli

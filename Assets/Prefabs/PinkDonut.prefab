@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3620374363631987585}
   m_Layer: 5
   m_Name: PinkDonut
-  m_TagString: Donut
+  m_TagString: Good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

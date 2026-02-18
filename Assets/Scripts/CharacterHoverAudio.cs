@@ -24,10 +24,14 @@ public class CharacterHoverAudio : MonoBehaviour, IPointerEnterHandler, IPointer
             audioSource = GetComponent<AudioSource>();
         }
         
-        // If still no audio source, try to find one in the scene
+        // If still no audio source, search in parent or log warning
         if (audioSource == null)
         {
-            audioSource = FindFirstObjectByType<AudioSource>();
+            audioSource = GetComponentInParent<AudioSource>();
+            if (audioSource == null)
+            {
+                Debug.LogWarning($"CharacterHoverAudio on {gameObject.name}: No AudioSource found. Please assign one in the inspector.");
+            }
         }
     }
 

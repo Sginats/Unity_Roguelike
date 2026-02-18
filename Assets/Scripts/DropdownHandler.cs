@@ -35,7 +35,7 @@ public class DropdownHandler : MonoBehaviour
 
     void OnDropdownValueChanged(int index)
     {
-        if (dropdown != null)
+        if (dropdown != null && index >= 0 && index < dropdown.options.Count)
         {
             string selectedOption = dropdown.options[index].text;
             Debug.Log("Selected option: " + selectedOption);

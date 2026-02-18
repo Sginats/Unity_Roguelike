@@ -24,6 +24,13 @@ public class TVController : MonoBehaviour
         if (tvScreen != null)
             tvScreen.SetActive(false);
         
+        // Validate channels array
+        if (channels == null || channels.Length == 0)
+        {
+            Debug.LogWarning("TVController: No channels assigned!");
+            return;
+        }
+        
         // Set up volume slider
         if (volumeSlider != null && tvAudioSource != null)
         {

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TVREMOTE_0: 6571738505713577791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

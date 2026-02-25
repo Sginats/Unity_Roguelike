@@ -7,57 +7,72 @@ public class CharacterHoverAudio : MonoBehaviour, IPointerEnterHandler, IPointer
     public AudioSource audioSource;
     public AudioClip hoverSound;
     
-    [Header("Visual Feedback (Optional)")]
+    [Header("Visual Feedback")]
     public bool scaleOnHover = true;
-    public float hoverScale = 1.1f;
+    public float hoverScale = 1.15f;
+    public float animationSpeed = 8f;
+    
+    [Header("TV Controller Reference")]
+    public TVController tvController;
     
     private Vector3 originalScale;
+    private Vector3 targetScale;
     private bool isHovering = false;
 
     void Start()
     {
         originalScale = transform.localScale;
+        targetScale = originalScale;
         
-        // If no audio source is assigned, try to get it from this object
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
         }
         
-        // If still no audio source, try to find one in the scene
         if (audioSource == null)
         {
             audioSource = FindFirstObjectByType<AudioSource>();
+        }
+        
+        if (tvController == null)
+        {
+            tvController = FindFirstObjectByType<TVController>();
+        }
+    }
+
+    void Update()
+    {
+        if (scaleOnHover)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * animationSpeed);
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (tvController != null && !tvController.IsPoweredOn())
+            return;
+        
         isHovering = true;
         
-        // Play hover sound
         if (audioSource != null && hoverSound != null)
         {
             audioSource.PlayOneShot(hoverSound);
         }
         
-        // Scale up on hover
         if (scaleOnHover)
         {
-            transform.localScale = originalScale * hoverScale;
+            targetScale = originalScale * hoverScale;
         }
-        
-        Debug.Log("Hovering over: " + gameObject.name);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
         
-        // Reset scale
         if (scaleOnHover)
         {
-            transform.localScale = originalScale;
+            targetScale = originalScale;
         }
     }
 }

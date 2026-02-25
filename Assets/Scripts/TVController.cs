@@ -80,7 +80,7 @@ public class TVController : MonoBehaviour
 
     public void SwitchChannel(int channelIndex)
     {
-        if (!isPoweredOn || channels == null || channelIndex < 0 || channelIndex >= channels.Length)
+        if (!isPoweredOn || channelIndex < 0 || channelIndex >= channels.Length)
             return;
         
         currentChannel = channelIndex;

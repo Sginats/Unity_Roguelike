@@ -12,6 +12,7 @@ public class CharacterHoverAudio : MonoBehaviour, IPointerEnterHandler, IPointer
     public float hoverScale = 1.1f;
     
     private Vector3 originalScale;
+    private bool isHovering = false;
 
     void Start()
     {
@@ -36,6 +37,8 @@ public class CharacterHoverAudio : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        isHovering = true;
+        
         // Play hover sound
         if (audioSource != null && hoverSound != null)
         {
@@ -53,6 +56,8 @@ public class CharacterHoverAudio : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        isHovering = false;
+        
         // Reset scale
         if (scaleOnHover)
         {

@@ -98,8 +98,8 @@ public class TVController : MonoBehaviour
                 channel.SetActive(false);
         }
         
-        // Show selected channel with bounds check
-        if (channelIndex >= 0 && channelIndex < channels.Length && channels[channelIndex] != null)
+        // Show selected channel
+        if (channels[channelIndex] != null)
         {
             channels[channelIndex].SetActive(true);
         }
